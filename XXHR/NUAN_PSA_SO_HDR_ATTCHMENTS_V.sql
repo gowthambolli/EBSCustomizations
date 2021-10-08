@@ -25,7 +25,6 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
                                   LANG_CONTEXT => L_LANG_CONTEXT,
                                   WARNING => L_WARNING
             );
-            RETURN L_BLOB;
             
         SELECT
         AD.PK1_VALUE           ORDER_HEADER_ID,
