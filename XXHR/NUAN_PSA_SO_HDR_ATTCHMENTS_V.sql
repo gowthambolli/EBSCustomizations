@@ -2,7 +2,6 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
         FUNCTION CLOB_TO_BLOB (
             P_DATA IN CLOB
         ) RETURN BLOB AS
-        
             L_BLOB          BLOB;
             L_DEST_OFFSET   PLS_INTEGER := 1;
             L_SRC_OFFSET    PLS_INTEGER := 1;
@@ -26,10 +25,8 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
                                   LANG_CONTEXT => L_LANG_CONTEXT,
                                   WARNING => L_WARNING
             );
-            
             RETURN L_BLOB;
-      
-
+            
         SELECT
         AD.PK1_VALUE           ORDER_HEADER_ID,
         AD.ATTACHED_DOCUMENT_ID,
@@ -57,7 +54,7 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
         FND_DOCUMENTS_LONG_TEXT     FDLT
     WHERE
             1 = 1
-        AND AD.ENTITY_NAME = 'OE_ORDER_HEADERS'                                             --entity_value
+        AND AD.ENTITY_NAME = 'OE_ORDER_HEADERS'
         AND FL.FILE_ID (+) = D.MEDIA_ID
         AND FDLT.MEDIA_ID (+) = D.MEDIA_ID
         AND D.DOCUMENT_ID = AD.DOCUMENT_ID
@@ -73,8 +70,6 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
         AND DET.LANGUAGE = USERENV(
             'LANG'
         )   
-   --and ad.pk1_value=9504039
 ;
-
 END;
 
