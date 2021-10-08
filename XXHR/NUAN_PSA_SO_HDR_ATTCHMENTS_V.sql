@@ -26,29 +26,11 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
                                   LANG_CONTEXT => L_LANG_CONTEXT,
                                   WARNING => L_WARNING
             );
-
-            RETURN L_BLOB;
+            
         END;
 
-    SELECT
-/*************************************************************************************************
-  *                                                                                          *
-  * TYPE             : View query                                                            *
-  * NAME             : NUAN_PSA_SO_HDR_ATTCHMENTS_V.sql                                     *
-  * PURPOSE          : This view is used to provide the SO attachements to SFDC             *
-  *                                                                                          *
-  *------------------------------------------------------------------------------------------*
-  *    Version        Date            Modified By         Purpose                            *
-  *------------------------------------------------------------------------------------------*
-  *    1.0          08-JUL-2021       Nitin Kolte        Initial Version
-  *    1.1          13-sep-2021       Pradeep Chavan UAT Defect
-  *********************************************************************************************/
- /*-- -----------------------------------------------------------------------------------
--- Author       : Pradeep Chavan
--- Description  : Converts a CLOB to a BLOB.
--- Last Modified: 13-SEP-2021
--- -----------------------------------------------------------------------------------*/
-        AD.PK1_VALUE            ORDER_HEADER_ID,
+        SELECT
+        AD.PK1_VALUE           ORDER_HEADER_ID,
         AD.ATTACHED_DOCUMENT_ID,
         AD.DOCUMENT_ID,
         AD.CATEGORY_ID,
