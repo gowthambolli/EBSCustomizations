@@ -92,21 +92,5 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
             'LANG'
         )   
    --and ad.pk1_value=9504039
-        AND EXISTS (
-            SELECT
-                1
-            FROM
-                NUAN_PSA_PROJECTS_HDR_MV PRJMV
-            WHERE
-                TO_CHAR(
-                    PRJMV.HEADER_ID
-                ) = AD.PK1_VALUE
-        )
 ;
-/
 
-  GRANT SELECT ON "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" TO "BIZTALK";
-  /
-  
-  GRANT SELECT ON "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" TO "APPSVIEW";
-/
