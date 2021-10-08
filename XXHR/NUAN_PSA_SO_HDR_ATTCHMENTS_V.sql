@@ -27,7 +27,8 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
                                   WARNING => L_WARNING
             );
             
-        END;
+            RETURN L_BLOB;
+      
 
         SELECT
         AD.PK1_VALUE           ORDER_HEADER_ID,
@@ -74,4 +75,6 @@ CREATE OR REPLACE EDITIONABLE VIEW "APPS"."NUAN_PSA_SO_HDR_ATTCHMENTS_V" ("ORDER
         )   
    --and ad.pk1_value=9504039
 ;
+
+END;
 
