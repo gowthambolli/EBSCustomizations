@@ -2,6 +2,7 @@
 <!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
 
 //Just added comment to check build revision numbers
+//6.0 testing adding 
 //To Committed by,on and message info"
 <AppModule
    Name="xxPersonAM"
